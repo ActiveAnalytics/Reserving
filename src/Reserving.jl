@@ -1,0 +1,5 @@
+module Reserving
+
+# package code goes here
+
+end # module
