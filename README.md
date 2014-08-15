@@ -253,6 +253,6 @@ julia> quantile(ttimes, [0, .25, .5, .75, 1])'*1E6
 
 # Future Updates
 
-We hope that this is just the beginning. We plan include more reserving methods and options for the current method as time allows. The next obviosu step is to expand the current chain ladder algorithm to that described by Thomas Mack's 1999 paper.
+We hope that this is just the beginning. We plan include more reserving methods and options for the current method as time allows. The next obvious step is to expand the current chain ladder algorithm to that described by Thomas Mack's 1999 paper.
 
 
