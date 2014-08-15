@@ -8,7 +8,7 @@ This Reserving package is a small library for carrying out reserving. At the mom
 
 # Installation
 
-It is hoped that at some point this package will be available in the Julia repository so that it can be installed using Pkg.add("Reserving"). Till then the package can be unpackaged into the ".julia/v0.3/" folder holding the packages and then use
+It is hoped that at some point this package will be available in the Julia repository so that it can be installed using `Pkg.add("Reserving")`. Till then the package can be unpackaged into the ".julia/v0.3/" folder holding the packages and then use
 
 ```
 Pkg.build("Reserving") # to build the package
@@ -270,7 +270,7 @@ julia> tri(output)
 
 # Performance
 
-We have gone to a lot of effort to get maximal amounts of performance in this package. The analysis itself is carried out in `C`, the code is located in `deps/cl.c` part of the package. Not only is it written in C, but as mentioned before the triangle has been flattened to one dimension as a result the calculation is very fast indeed
+We have gone to much effort to get ensure good performance from this package. The analysis itself is carried out in `C`, the code is located in `deps/cl.c` part of the package. Not only is it written in C, but as mentioned before the triangle has been flattened to one dimension as a result the calculation is very fast indeed
 
 Below are the summary statistics for times in *microseconds* taken to run the `chainladder` algorithm on the `mtr2` data. Bear in mind that the times include the full calculation of the items in the `CL` object.
 
@@ -284,6 +284,6 @@ julia> quantile(ttimes, [0, .25, .5, .75, 1])'*1E6
 
 # Future Updates
 
-We hope that this is just the beginning. We plan to include more reserving methods and options for the current method as time allows. The next obvious step is to expand the current chain ladder algorithm to that described by Thomas Mack's 1999 paper.
+We hope that this is just the beginning. We plan to include more reserving methods and options for the current method as time allows. The next obvious step is to expand the current chain ladder algorithm to that described by Thomas Mack's 1999 paper. For any suggestions or requests contact chibisi@activeanalytics.co.uk.
 
 
