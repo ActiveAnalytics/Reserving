@@ -221,6 +221,37 @@ julia> output[8]
 3.7288702412577975e6
 ```
 
+... use Symbolic names:
+
+```
+julia> output[:f]
+8-element Array{Float64,1}:
+ 11.1043 
+  4.09227
+  1.70791
+  1.27592
+  1.13891
+  1.0687 
+  1.02633
+  1.02268
+```
+
+... use String names
+
+```
+julia> output["f"]
+8-element Array{Float64,1}:
+ 11.1043 
+  4.09227
+  1.70791
+  1.27592
+  1.13891
+  1.0687 
+  1.02633
+  1.02268
+```
+
+
 There is a convenience function provided for when the use simply wants to extract the triangle from the object:
 
 ```

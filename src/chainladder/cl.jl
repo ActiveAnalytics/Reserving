@@ -64,23 +64,34 @@ end
 
 # indexing of the items in the CL object
 function Base.getindex(cl::CL, ind::Int64)
-	if ind == 1
+	clnames = Base.names(cl)
+	if ind != 1
+		return getfield(cl, clnames[ind])
+	else
 		return tri(cl)
-	elseif ind == 2
-		return cl.p
-	elseif ind == 3
-		return cl.f'
-	elseif ind == 4
-		return cl.f_se'
-	elseif ind == 5
-		return cl.sigma'
-	elseif ind == 6
-		return cl.res'
-	elseif ind == 7
-		return cl.res_se'
-	elseif ind == 8
-		return cl.tres_se
 	end
+end
+
+# overloading for string
+function Base.getindex(cl::CL, ind::String)
+	if ind != "tri"
+		return getfield(cl, parse(ind))
+	else
+		return tri(cl)
+	end
+end
+
+# overloading for symbol
+function Base.getindex(cl::CL, ind::Symbol)
+	if ind != :tri
+		return getfield(cl, ind)
+	else
+		return tri(cl)
+	end
+end
+
+function Base.length(cl::CL)
+	return length(names(cl))
 end
 
 # constructor for chain ladder object with matrix (2D array)
@@ -101,6 +112,12 @@ end
 # accessor function gets the triange from a chain ladder object
 function tri(cl::CL)
 	return reshape(cl.tri, (cl.p, cl.p))
+end
+
+# overload: use function to create a triangle 2D array from 1D array triangle.
+function tri(cl::Array{Float64,1})
+	p = int(sqrt(length(cl)))
+	return reshape(cl, (p, p))
 end
 
 # function to carry out the chain ladder algorithm: type default to a chain ladder object of the kind described in:
