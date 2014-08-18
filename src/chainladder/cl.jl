@@ -140,6 +140,7 @@ function chainladder!(cl::CL)
 	cl.sigma = sqrt(cl.sigma)
 	cl.res_se = sqrt(cl.res_se)
 	cl.tres_se = sqrt(tres_se[1])
+	cl.f_se = sqrt(cl.f_se)
 	return cl
 end
 
@@ -163,6 +164,7 @@ function chainladder(cl::CL)
 	cl.sigma = sqrt(cl.sigma)
 	cl.res_se = sqrt(cl.res_se)
 	cl.tres_se = sqrt(tres_se[1])
+	cl.f_se = sqrt(cl.f_se)
 	return cl
 end
 
